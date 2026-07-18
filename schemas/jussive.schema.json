@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jussive.dev/schemas/jussive.schema.json",
+  "type": "object",
+  "required": ["name", "release"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "changelog": { "type": "string" },
+    "runtime": {
+      "type": "object",
+      "properties": {
+        "kind": { "const": "go" },
+        "entrypoint": { "type": "string", "minLength": 1 }
+      }
+    },
+    "release": {
+      "type": "object",
+      "required": ["version_source", "tag_prefix"],
+      "properties": {
+        "version_source": { "const": "git_tag" },
+        "tag_prefix": { "type": "string" }
+      }
+    }
+  }
+}

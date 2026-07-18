@@ -1,0 +1,22 @@
+# Go build output
+/bin/
+/dist/
+*.exe
+*.test
+*.out
+
+# Coverage and profiling
+coverage.out
+*.coverprofile
+*.prof
+
+# Local/editor state
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+*.tmp

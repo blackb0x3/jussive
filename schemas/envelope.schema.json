@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jussive.dev/schemas/envelope.schema.json",
+  "type": "object",
+  "required": ["ok", "data", "warnings", "errors"],
+  "properties": {
+    "ok": { "type": "boolean" },
+    "data": {},
+    "warnings": { "type": "array" },
+    "errors": { "type": "array" }
+  }
+}

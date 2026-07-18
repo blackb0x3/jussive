@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jussive.dev/schemas/command.agent.schema.json",
+  "type": "object",
+  "required": ["id", "name", "summary", "command"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "risk": { "type": "string" },
+    "risk_level": { "enum": ["low", "medium", "high"] },
+    "read_only": { "type": "boolean" },
+    "mutates_files": { "type": "boolean" },
+    "mutates_external_systems": { "type": "boolean" },
+    "supports_dry_run": { "type": "boolean" },
+    "requires_confirmation": { "type": "boolean" },
+    "command": {
+      "type": "object",
+      "required": ["path"],
+      "properties": {
+        "path": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}
